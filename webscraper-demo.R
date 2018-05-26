@@ -27,16 +27,22 @@ rank_data<-as.numeric(rank_data)
 head(rank_data)
 
 #Using CSS selectors to scrape the title section
+title_data_html <- html_nodes(webpage, '.lister-item-header a')
 
 #html to text 
+title_data <- html_text(title_data_html)
 
 #look at data
+head(title_data)
 
 #Using CSS selectors to scrape the description section
+descriptions_html <- html_nodes(webpage, '.ratings-bar+ .text-muted')
 
 #Converting the description data to text
+descriptions <- html_text(descriptions_html)
 
 #look at data
+head(descriptions)
 
 #Data-Preprocessing: removing '\n'
 
